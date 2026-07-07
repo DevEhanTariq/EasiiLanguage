@@ -43,5 +43,33 @@ class interpret():
 
 
             elif components[0] == "var":
-                self.variables[components[1]] = components[3]
+                text = ""
+                for component in components[4:]:
+                    text += component + " "
+                if components[3] == "input":
+                    newText = ""
+                    listen = False
+                    variableNames = []
+                    for char in text:
+                        if char == "}":
+                            listen = False
+                        elif listen:
+                            variableNames[-1] = variableNames[-1] + char
+                        elif char == "{":
+                            listen = True
+                            variableNames.append("")
+                    listen = False
+                    for char in text:
+                        if char == "}":
+                            listen = False
+                        elif char == "{":
+                            listen = True
+                            newText += self.variables[variableNames[0]]
+                            variableNames.pop(0)
+                        elif not listen:
+                            newText += char
+                    inp = input(newText)
+                    self.variables[components[1]] = inp
+                else:
+                    self.variables[components[1]] = components[3]
 
