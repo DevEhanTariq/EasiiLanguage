@@ -1,7 +1,14 @@
-class hello():
-    def __init__(self):
-        print("Hello world!")
+from .interpreter import *
 
-class bye():
-    def __init__(self):
-        print("Goodbye!")
+class create():
+    def __init__(self, args):
+        with open(f"{args[1]}.easii", "w") as f:
+            pass
+
+class run():
+    def __init__(self, command):
+        filename = command
+        inte = interpret(filename)
+        inte.read()
+        inte.format()
+        inte.loop()

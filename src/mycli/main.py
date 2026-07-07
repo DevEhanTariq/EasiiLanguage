@@ -1,23 +1,19 @@
 import sys
-import os
 from .commands import *
 
 args = sys.argv[1:]
 command = args[0]
-directory = os.getcwd()
 
 def main():
     if not args:
         print("Usage: mycli <command>")
         exit()
 
-    if command == "hello":
-        hello()
-        print(directory)
+    if command == "create":
+        create(args)
 
-    elif command == "bye":
-        bye()
-        print(directory)
+    if command[0:2] == "./":
+        run(command)
 
     else:
         print(f"Unknown command: {command}")
