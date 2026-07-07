@@ -1,5 +1,10 @@
 # How to code Easii:
 
+### Creating and running a `.es` file:
+
+- To create a `.es` file, into the terminal type, `easii create (filename)`
+- To run a file, into the terminal type, `easii ./(filename).es`
+
 ### Defining a variable using `var`:
 
 - Separated by spaces, the first component after `var`, is the variable name, and the third is the variable value.
