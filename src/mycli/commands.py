@@ -2,7 +2,7 @@ from .interpreter import *
 
 class create():
     def __init__(self, args):
-        with open(f"{args[1]}.easii", "w") as f:
+        with open(f"{args[1]}.es", "w") as f:
             pass
 
 class run():

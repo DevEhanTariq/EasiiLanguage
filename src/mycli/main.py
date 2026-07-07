@@ -12,7 +12,7 @@ def main():
     if command == "create":
         create(args)
 
-    if command[0:2] == "./":
+    elif command[0:2] == "./":
         run(command)
 
     else:
